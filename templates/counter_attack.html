@@ -4,11 +4,7 @@
 {% block content %}
     <form method="post" action="{% url 'counter_attack' game.id %}">
         {% csrf_token %}
-        <label for="selected_card">Select a card to defend:</label>
-        <select name="selected_card" id="selected_card">
-            {% for card in random_cards %}
-            <option value="{{ card }}">{{ card }}</option>
-            {% endfor %}
+        <lab
         </select>
         <button type="submit">Submit</button>
     </form>
