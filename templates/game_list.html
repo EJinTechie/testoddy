@@ -1,0 +1,58 @@
+{% extends "main.html" %}
+{%load static%}
+
+
+{% block content %}
+
+<div class="history-container">
+    <h1>History List</h1>
+    <div class="history-list-top">
+        <div class="player-info">
+            <p>현재 플레이어: {{ request.user.username }}</p>
+        </div>
+        <div class="game-controls">
+            <button class="default-btn" onclick="location.href='/start'">
+                <p>새 게임 시작</p>
+            </button>
+        </div>
+    </div>
+    <div class="history-list-bottom">
+        <div class="game-list">
+            {% for game in games %}
+            <div class="game-item">
+                <div class="game-summary">
+                    <h2>{{ game.attacker.username }} VS {{ game.defender.username }}</h2>
+                </div>
+                <div class="game-result">
+                    {% if game.result == 'attacker_win' %}
+                    <p>패배😔</p>
+                    {% elif game.result == 'defender_win' %}
+                    <p>승리🏆 </p>
+                    {% elif game.result == "draw" %}
+                    <p>무승부✔️</p>
+                    {% else %}
+                    <p>진행 중🕓</p>
+                    {% endif %}
+                </div>
+                <div class="game-actions">
+                    <a href="{% url 'Cardgame:game_detail' game.id %}" class="game-info-link">
+                        <p>게임정보</p>
+                    </a>
+                </div>
+                <div class="game-right">
+                    {% if request.user == game.attacker and game.defender_card is None %}
+                    <button class="default-btn4" onclick="location.href='{% url 'Cardgame:cancel_game' game.id %}'"><p>게임 취소</p>
+                        </button>
+                    {% elif request.user == game.defender and game.defender_card is None %}
+                    <button class="default-btn4"
+                        onclick="location.href='{% url 'Cardgame:select_card' game.id %}'"><p>CounterAttack</p></button>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Piro Game main page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ga+Maamli&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <p>♠️ Pirogramming Card Game ♠️</p>
+            </div>
+            <div class="header-right">
+                {% if user.is_authenticated %}
+                <a href="/start">게임하기</a>
+                <a href="/ranking">랭킹보기</a>
+                <a href="/logout">로그아웃</a>
+                {% else %}
+                <a href="{% url 'Cardgame:login' %}">로그인</a>
+                <a href="{% url 'Cardgame:signup' %}">회원가입</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="background">
+            <div class="overlay">
+            </div>
+            <img src="{% static 'card2.png' %}" alt="">
+        </div>
+        {% block content %}
+            <div class="main-container">
+            <h1>Piro Game</h1>
+            {% if user.is_authenticated %}
+            <p>{{ user.username }}님이 로그인 중</p>
+            <div class="start_list_container">
+                <button class="default-btn2"><a href="/start">start</a></button>
+                <button class="default-btn2"><a href="/cardgame" class="list-button">list</a></button>
+            </div>
+            {% else %}
+            <div class="button_start"><button class="default-btn"><a href="{% url 'Cardgame:login' %}"
+                        class="start-button">start</a></button></div>
+            {% endif %}
+            </div>
+            {% endblock %}
+    </div>
+</body>
+<footer>
+    <p>피로그래밍 21기 카드게임 4조</p>
+</footer>
+
+</html>

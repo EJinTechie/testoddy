@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{%load static%}
+
+
+{% block content %}
+<div class="ranking-content">
+    <div class="ranking-container">
+        <h1>🎉 Piro 명예의 전당 🎉</h1>
+        <div class="bar-chart">
+
+
+            {% for profile in profiles %}
+           
+            <div class="bar" style="height: {{ profile.bar_height }}%;">
+                <div class="bar-fill">
+                    <div>{{ profile.score }}</div>
+                </div>
+                <div class="bar-fill2">
+                    <p>{{ profile.user.username }}</p>
+                </div>                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="back-to-list">
+        <div class="button_center"><button class="default-btn" onclick="location.href='{% url 'Cardgame:game_list' %}'"><p>Total list</p></button></div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{%load static%}
+{% block content %}
+    <h1>Counter Attack!!</h1>
+    <p>Game: {{ game.attacker.username }} vs {{ game.defender.username }}</p>
+    <form method="post" action="{% url 'counter_attack' game.id %}">
+        {% csrf_token %}
+        <label for="selected_card">Select a card to defend:</label>
+        <select name="selected_card" id="selected_card">
+            {% for card in random_cards %}
+            <option value="{{ card }}">{{ card }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}

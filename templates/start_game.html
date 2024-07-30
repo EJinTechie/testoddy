@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <div class="start-container">
+        <h1>New Game</h1>
+        <form method="post" action="{% url 'Cardgame:start_game' %}"  class="game-form">
+        <!-- <form method="post"> -->
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="button_center"><button type="submit" class="default-btn"><p>Start Game</p></button></div>
+        </form>
+    </div>
+{% endblock %}

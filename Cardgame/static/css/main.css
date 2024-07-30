@@ -1,0 +1,633 @@
+body {
+    width: 100%;
+    background-color: #8080B2;
+    text-decoration-line: none;
+
+}
+
+/* 
+#EDEBFA
+#e4d0f9
+#B9B0D6
+#e9d4ff */
+
+/* 이모티콘 💤✔️🤦‍♀️🤦‍♂️🎇🎆🎊🎉🥉🏅🥇🥈🎖️🏆 */
+
+.header {
+    background-color: #B9B0D6;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 60px;
+    margin-top: 0;
+    box-shadow: 5px 5px 5px #e4d0f9;
+    z-index: 9999999;
+}
+.header-container {
+    width: min(1320px, 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 99999;
+}
+
+.header-left p {
+    /* font-family: "Ga Maamli", sans-serif; */
+    font-family: "Black Ops One", system-ui;
+    font-size: 30px;
+    color:#ffffff;
+    margin-bottom: 0;
+}
+.header p:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    text-decoration-line: none;
+    color:#a861e6;
+}
+
+.header-right {
+    padding-top: 10px;
+    font-family: "Orbit", sans-serif;
+    font-weight: 800;
+}
+.header a {
+    font-size: 15px;
+    margin: 0 10px;
+}
+
+.header a:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    text-decoration-line: none;
+    color:#a861e6;
+    font-size: 17px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    padding-top: 160px;
+}
+.main-content h1{
+    font-family: "Bagel Fat One", system-ui;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.main-container {
+    background-color: #e4d0f9;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    text-align: center;
+    padding: 40px;
+    box-shadow: 5px 5px 5px #a861e6;
+    border-radius: 20px;
+    margin-top: 100px;
+    z-index: 99999;
+}
+
+.login-container {
+    background-color: #e4d0f9;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    text-align: center;
+    padding: 40px 50px;
+    box-shadow: 5px 5px 5px #a861e6;
+    border-radius: 20px;
+    margin-top: 20px;
+    z-index: 99999;
+
+}
+
+.login-container:hover{
+    transform: scale(1.1);
+}
+
+.login-container h2{
+    font-family: "Bagel Fat One", system-ui;
+    margin-top: 0;
+    margin-bottom: 20px;
+    
+}
+
+.login-container a {
+    margin-top: 10px;
+}
+
+.login-container h3 {
+    font-size: 10px;
+    margin: 10px 0 0 0;
+}
+.login-container p {
+    font-family: "Orbit", sans-serif;
+    
+}
+
+.button_center {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+.button_center p {
+    font-family: "Orbit", sans-serif;
+    margin-bottom: 5px;
+}
+
+.button_center2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+
+
+}
+.button_center2 p {
+    font-family: "Orbit", sans-serif;
+    margin-bottom: 5px;
+}
+
+
+
+
+.main-container:hover{
+    transform: scale(1.1);
+}
+
+.main-container p {
+    font-family: "Orbit", sans-serif;
+}
+.default-btn {
+    background-color: #ffffff;
+    width: 50%;
+    border-radius: 10px;
+    /* border-color: #a861e6; */
+    height: 35px;
+    width: 120px;
+}
+.default-btn p {
+    margin-bottom: 0;
+}
+
+.start_list_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 25px;
+    z-index: 99999;
+}
+
+.default-btn2 {
+    background-color: #ffffff;
+    width: 40%;
+    border-radius: 10px;
+    border-color: #a861e6;
+    height: 35px;
+    width: 120px;
+}
+
+.default-btn:hover, .default-btn2:hover {
+    transform: scale(1.2);
+    text-decoration: none;
+    text-decoration-line: none;
+    background-color: #a861e6;
+}
+
+.default-btn:hover a, .default-btn2:hover a {
+    color:#ffffff;
+}
+
+.default-btn a, .default-btn2 a {
+    /* font-family: "Orbit", sans-serif; */
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 500;
+}
+
+.button_start {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: #B9B0D6;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-family: "Orbit", sans-serif;
+    /* font-family: "Nanum Gothic Coding", monospace; */
+    font-weight: 400;
+    color: white;
+    padding-top: 15px;
+    padding-right: 90px;
+    text-align: right;
+    z-index: 99999999999;
+}
+
+.login-form {
+    text-align: left;
+}
+
+.login-form input {
+    border-radius: 5px;
+    border-color: #ffffff;
+
+}
+.login-form p {
+    margin-bottom: 20px;
+}
+.login-form p label {
+    font-family: "Orbit", sans-serif;
+}
+
+.helptext {
+    font-size: 11px;
+    color: darkgray;
+    margin-left: 10px;
+}
+
+.login-form ul li{
+    font-size: 12px;
+    color: darkgray;
+    margin-left: 10px;
+}
+
+/* game_list 페이지----------------------------------------------- */
+
+.history-container {
+    background-color: #e4d0f9;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 1000px;
+    padding: 40px 70px;
+    box-shadow: 5px 5px 5px #a861e6;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 120px;
+    z-index: 99999;
+}
+
+.history-container:hover {
+    transform: scale(1.1);
+}
+
+.history-list-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+    padding: 0 50px;
+}
+
+.history-list-top p {
+    margin-bottom: 0;
+    font-family: "Orbit", sans-serif;
+    font-weight: 800;
+}
+
+.history-list-bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+.history-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card_select {
+    border-radius: 5px;
+    height: 30px;
+    width: 60px;
+}
+.card_select p {
+    font-size: 20px;
+}
+
+.game_result {
+    background-color: #e4d0f9;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    text-align: center;
+    padding: 40px 50px;
+    box-shadow: 5px 5px 5px #a861e6;
+    border-radius: 20px;
+    margin-top: 20px;
+    z-index: 99999;
+
+}
+
+.game_result p {
+    margin-bottom: 5px;
+}
+.game_result:hover{
+    transform: scale(1.1);
+}
+
+.game_result h2{
+    font-family: "Bagel Fat One", system-ui;
+    margin-top: 0;
+    margin-bottom: 20px;
+    
+}
+.history-list-bottom {
+    display: flex;
+    justify-content: center;
+    padding: 40px 40px 0 40px;
+}
+
+.history-list-bottom p {
+    font-family: "Orbit", sans-serif;
+    margin: 0;
+}
+
+.history-list-bottom h2 {
+    font-family: "Orbit", sans-serif;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.game-item {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.game-summary, .game-result, .game-actions, .game-right {
+    min-width: 200px;
+}
+
+
+.game-list h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #a898ba;
+    margin-top: 5px;
+    font-weight: 700;
+}
+.game-list p {
+    margin-bottom: 5px;
+}
+.game-match-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-match-content p {
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+.game-match-content h2 {
+    font-family: "Orbit", sans-serif;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 700;
+    margin-right: 20px;
+
+}
+.game-match-content p {
+    font-family: "Orbit", sans-serif;
+    margin: 0;
+
+}
+/* #ranking 페이지--------------------------------------------------- */
+.ranking-content {
+    z-index: 99999;
+}
+
+.ranking-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 99999;
+}
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 300px;
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.bar {
+    width: 60px;
+    background-color: #9d7cda;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: height 0.3s ease; 
+}
+.bar-fill {
+    width: 100%;
+    background-color: #835eca;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.bar-fill2 {
+    width: 100%;
+    background-color:#f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #835eca;
+    border: none;
+    outline: none;
+    flex-wrap: wrap;
+}
+
+.bar-fill2 p {
+    margin-bottom: 0;
+    font-family: "Orbit", sans-serif;
+    font-size: 15px;
+    color: black;
+}
+
+
+
+.ranking-content {
+    background-color: #e4d0f9;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    text-align: center;
+    padding: 40px 50px;
+    box-shadow: 5px 5px 5px #a861e6;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 120px;
+
+}
+
+.ranking-content:hover{
+    transform: scale(1.1);
+}
+
+.ranking-content h2{
+    font-family: "Bagel Fat One", system-ui;
+    margin-top: 0;
+    margin-bottom: 20px;
+    
+}
+/* 
+.bar-flex {
+    display: flex;
+    flex-direction: column;
+} */
+
+.button_center3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+.button_center3 p {
+    font-family: "Orbit", sans-serif;
+    margin-bottom: 5px;
+}
+
+.default-btn4 {
+    background-color: #efd1ec;
+    width: 50%;
+    border-radius: 10px;
+    /* border-color: #a861e6; */
+    height: 30px;
+    width: 120px;
+    border-color:  #c3b1d7;
+    border-bottom-color: #c3b1d7;
+    border-right-color: #c3b1d7;
+}
+
+.default-btn4 p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.default-btn4:hover {
+    transform: scale(1.1);
+    background-color: #bb9ade;
+}
+
+.result-container p {
+    margin-bottom: 0;
+    font-family: "Orbit", sans-serif;
+}
+
+.signup-container {
+    background-color: #e4d0f9;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    text-align: center;
+    padding: 40px 50px;
+    box-shadow: 5px 5px 5px #a861e6;
+    border-radius: 20px;
+    margin-top: 20px;
+
+}
+
+
+.signup-container {
+    background-color: #e4d0f9;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    text-align: center;
+    padding: 40px 50px;
+    box-shadow: 5px 5px 5px #a861e6;
+    border-radius: 20px;
+    margin-top: 20px;
+    z-index: 99999;
+
+}
+
+.signup-container:hover{
+    transform: scale(1.1);
+}
+
+.signup-container h2{
+    font-family: "Bagel Fat One", system-ui;
+    margin-top: 0;
+    margin-bottom: 20px;
+    
+}
+
+
+/* #background 추가------------------------ */
+.background {
+    position: absolute;
+    top:0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+}
+
+.background img {
+    width: 100%;
+    height: auto;
+    background-repeat: repeat;
+}
+
+
+
+.default-btn p {
+    margin-bottom: 0;
+}
+
+.result-container p {
+    margin-bottom: 10px;
+}
+/* <!-- ✏️📍💫✅#️⃣▶️☑️✔️🔸▪️▫️ --> */
+
+.result-container h1 {
+    font-size: 20px;
+    margin:0;
+    color: #a898ba;
+}
+
+.start-container {
+    background-color: #e4d0f9;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    text-align: center;
+    padding: 40px 50px;
+    box-shadow: 5px 5px 5px #a861e6;
+    border-radius: 20px;
+    margin-top: 80px;
+    z-index: 99999;
+
+}
+
+.start-container:hover{
+    transform: scale(1.1);
+}

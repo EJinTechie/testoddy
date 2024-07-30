@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{%load static%}
+{% block content %}
+<div class="game_result">
+    <h2>Game Result</h2>
+    <div class="result-container">
+        <p>Attacker: {{ game.attacker.username }} (♠️ Card: {{ game.attacker_card }})</p>
+        <p>Defender: {{ game.defender.username }} (♠️ Card: {{ game.defender_card }})</p>
+        <h1>---------------------</h1>
+        <p>Result:
+            {% if game.result == 'attacker_win' %}
+            Attacker won 🏅
+            {% elif game.result == 'defender_win' %}
+            Defender won 🏅
+            {% else %}
+            Draw🤔
+            {% endif %}
+        </p>
+        {% if game.winner %}
+        <p>🏆 Winner: {{ game.winner.username }}</p>
+        {% endif %}
+        <h1>---------------------</h1>  
+        <p>☑️ Attacker's new score: {{ game.attacker.profile.score }}</p>
+        <p>☑️ Defender's new score: {{ game.defender.profile.score }}</p>
+    </div>
+    <div class="button_center"><button class="default-btn" onclick="location.href='{% url 'Cardgame:game_list' %}'"><p>Total list</p></button></div>
+</div>
+{% endblock %}s

@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{%load static%}
+
+
+{% block content %}
+    <div class="login-container">
+        <h2>Select Card for {{ game }}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="selected_card"><p>Select Card:</p></label>
+            <select name="selected_card" id="selected_card" class="card_select">
+                {% for card in cards %}
+                <option value="{{ card }}">{{ card }}</option>
+                {% endfor %}
+            </select>
+            <div class="button_center"><button type="submit" class="default-btn"><p>Submit</p></button></div>
+        </form>
+    </div>
+
+{% endblock %}

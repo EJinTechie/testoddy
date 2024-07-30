@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% load socialaccount %}
+{% load static %}
+
+
+{% block content %}
+<div class="login-container">
+    <h2>Login</h2>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+               {% if "로그인" not in message %}
+                <li>{{ message }}</li>
+               {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="button_center"><button type="submit" class="default-btn"><p>Login</p></button></div>
+    </form>
+    <!-- <hr> -->
+    <h3>Or</h3>
+    <a href="{% provider_login_url 'google' %}"><p>login with Google</p></a>
+</div>
+{% endblock %}

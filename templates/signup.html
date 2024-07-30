@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{%load static%}
+
+
+{% block content %}
+
+<head>
+    <title>회원가입</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var helpText = document.querySelectorAll('.help-text');
+            helpText.forEach(function (element) {
+                element.style.display = 'none';
+            });
+
+            var passwordFields = document.querySelectorAll('input[type="password"]');
+            passwordFields.forEach(function (field) {
+                field.addEventListener('focus', function () {
+                    helpText.forEach(function (element) {
+                        element.style.display = 'block';
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<div class="signup-container">
+    <h2>Sign up</h2>
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="button_center"><button type="submit" class="default-btn"><p>Sign up</p></button></div>
+    </form>
+</div>
+
+{% endblock %}

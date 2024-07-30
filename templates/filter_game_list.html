@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+{%load static%}
+
+
+{% block content %}
+    <div class="history-container">
+        <h1>Games with {{ opponent.username }}</h1>
+        
+        <div class="game-list">
+            {% for game in games %}
+                <div class="game-match-container">
+                    <h3>{{ game.timestamp|date:"Y-m-d H:i" }}</h3>
+                    <div class="game-match-content">
+                        <h2>{{ game.attacker.username }} VS {{ game.defender.username }} |</h2>
+                        <div>
+                            {% if game.result == "win" %}
+                                <p>승리🏆 </p>
+                            {% elif game.result == "lose" %}
+                                <p>패배😔</p>
+                            {% elif game.result == "draw" %}
+                                <p>무승부✔️</p>
+                            {% else %}
+                                <p>진행 중🕓 </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <p>--------------------------------------------------</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="button_center"><button class="default-btn" onclick="location.href='{% url 'Cardgame:game_list' %}'"><p>Total list</p></button></div>
+    </div>
+{% endblock %}
+
