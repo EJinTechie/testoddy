@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 
 {% block content %}
-    <div class="login-container">
+    <div class="logn-container">
         <h4>{{ game.id }} </h4>
         <h2>{{ game.attacker.username }} VS {{ game.defender.username }}</h2>
         <p>
@@ -10,21 +10,12 @@
                 <br>
                 나: {{ game.attacker_card }}
             {% elif request.user == game.defender and game.defender_card is None %}
-                <form method="post">
+                <form metod="post">
                     {% csrf_token %}
                     <div class="button_center2"><button class="default-btn" name="counter_attack"><p>대응하기</p></button></div>
                 </form>
             {% else %}
-                <p>결과: {{ game.result }}</p>
+                <p>결과: {{ game.reult }}</p>
             {% endif %}
-        </p>
-        <form method="post">
-            {% csrf_token %}
-            {% if request.user == game.attacker and game.defender_card is None %}
-                <div class="button_center2"><button class="default-btn" name="cancel_game"><p>게임 취소</p></button></div>
-            {% endif %}
-            
-        </form>
-        <div class="button_center2"><button class="default-btn" onclick="location.href='{% url 'Cardgame:filter_game_list' game.id %}'"><p>전적목록</p></button></div>
-    </div>
+
 {% endblock %}
