@@ -2,8 +2,6 @@
 {% extends "main.html" %}
 {%load static%}
 {% block content %}
-    <h1>Counter Attack!!</h1>
-    <p>Game: rkjkjg{{ game.attacker.username }} vs {{ game.defender.username }}</p>
     <form method="post" action="{% url 'counter_attack' game.id %}">
         {% csrf_token %}
         <lab
